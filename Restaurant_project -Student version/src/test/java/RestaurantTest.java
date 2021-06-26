@@ -86,5 +86,19 @@ class RestaurantTest {
 
         assertEquals(0,expectedTotalOrderPrice);
     }
+
+    @Test
+    public void when_items_are_selected_from_menu_then_total_price_of_selected_items_should_be_returned(){
+        restaurant.addToMenu("Red Sauce Pasta", 250);
+        List<String> selectedItemsName = new ArrayList<>();
+        selectedItemsName.add("Red Sauce Pasta");//250
+        selectedItemsName.add("Sweet corn soup");//119
+        selectedItemsName.add("Vegetable lasagne");//269
+
+        int expectedTotalOrderPrice = restaurant.totalOrderPrice(selectedItemsName);
+
+        assertEquals(638,expectedTotalOrderPrice);
+
+    }
     //<<<<<<<<<<<<<<<<<<<<<<TotalOrderPrice>>>>>>>>>>>>>>>>>>>
 }
