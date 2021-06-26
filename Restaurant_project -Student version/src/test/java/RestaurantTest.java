@@ -77,5 +77,14 @@ class RestaurantTest {
                 ()->restaurant.removeFromMenu("French fries"));
     }
     //<<<<<<<<<<<<<<<<<<<<<<<MENU>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-    
+
+    //<<<<<<<<<<<<<<<<<<<<<<TotalOrderPrice>>>>>>>>>>>>>>>>>>>
+    @Test
+    public void when_no_item_are_selected_from_menu_then_total_price_should_be_returned_as_0(){
+        List<String> selectedItemsName = new ArrayList<>();
+        int expectedTotalOrderPrice = restaurant.totalOrderPrice(selectedItemsName);
+
+        assertEquals(0,expectedTotalOrderPrice);
+    }
+    //<<<<<<<<<<<<<<<<<<<<<<TotalOrderPrice>>>>>>>>>>>>>>>>>>>
 }
