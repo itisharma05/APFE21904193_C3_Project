@@ -66,6 +66,12 @@ public class Restaurant {
     }
 
     public int totalOrderPrice(List<String> selectedItemsName) {
-        return 0;
+        int totalPrice = 0;
+        for(String itemName : selectedItemsName)
+        {
+            Item item = findItemByName(itemName);
+            totalPrice = totalPrice + item.getPrice();
+        }
+        return totalPrice;
     }
 }
